@@ -1,16 +1,18 @@
 header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    padding: 21px;
+    background-color: #D0D3D4;
+    justify-content: space-between;
+    display: flex;
+    
 }
 nav li {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 25px;
+} 
+nav a {
+    font-size: 19px;
+    text-decoration: none;
+    color: black;
 }
+
