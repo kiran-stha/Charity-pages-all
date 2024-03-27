@@ -3,135 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Manage Charity | Share and Smile</title>
     <style>
         /* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-h1, h2, h3 {
-    margin-top: 0;
-}
+        h1, h2, h3 {
+            margin-top: 0;
+        }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-/* Header styles */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
+        /* Header styles */
+        header {
+            background-color: #d0d3d4;
+            color: black;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-header h1 {
-    margin: 0;
-}
+        .topnav {
+            overflow: hidden;
+            background-color: #d0d3d4;
+        }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
+        .topnav a {
+            float: inline-start;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        .topnav .search-container {
+            float: right;
+            display: flex; /* Added to display search input and button inline */
+        }
 
-/* Main content styles */
-main {
-    padding: 20px;
-}
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
 
-section {
-    margin-bottom: 20px;
-}
+        .topnav .search-container button {
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
 
-/* Form styles */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-}
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-}
+        /* Main content styles */
+        main {
+            padding: 20px;
+        }
 
-input[type="text"],
-textarea,
-select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+        section {
+            margin-bottom: 20px;
+        }
 
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
+        /* Form styles */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
 
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        /* CSS for the View, Edit, and Delete buttons */
+        .button-group {
+            margin-top: 10px;
+        }
+
+        .button-group button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            margin-right: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-group button:hover {
+            background-color: #555;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #d0d3d4;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            position:relative;
+            bottom: 0;
+            width: 100%;
+        }
 
     </style>
 </head>
 <body>
-    <header>
-        <h1>Manage Charity</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="logout.html">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Create/Edit Charity Project</h2>
-            <form id="charityForm" action="process_charity.php" method="post">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br>
-                
-                <label for="description">Description:</label><br>
-                <textarea id="description" name="description" required></textarea><br>
-                
-                <label for="category">Category:</label><br>
-                <select id="category" name="category">
-                    <option value="health">Health</option>
-                    <option value="education">Education</option>
-                    <option value="environment">Environment</option>
-                </select><br>
-                
-                <input type="submit" value="Save">
-            </form>
-        </section>
+<header>
+    <h1>Manage Charity </h1>
+    <div class="topnav">
+        <a class="active" href="index.html">Home</a>
+        <a class="active" href="charity.html">Charity List</a>
+        <a href="#logout">Logout</a>
+        <div class="search-container">
+            <input type="text" placeholder="Search Project Here" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2>View/Edit/Delete Charity Project</h2>
+        <form id="charityForm" action="process_charity.php" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+
+            <label for="category">Category:</label><br>
+            <select id="category" name="category">
+                <option value="health">Health</option>
+                <option value="education">Education</option>
+                <option value="environment">Environment</option>
+            </select><br>
+
+            <input type="submit" value="Add Charity">
+        </form>
+    </section>
+
+    <section>
         <h2> Charity List </h2>
-        <section id="charityList">
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Share and Smile. All rights reserved.</p>
-    </footer>
+        <div id="charityList">
+            <!-- Charity list will import later from database -->
+            <div class="charity-item">
+                <h3>Charity Name 1</h3>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Category: Health</p>
+                <div class="button-group">
+                    <button class="view-button">View</button>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+<br> <br>
+            <div class="charity-item">
+                <h3>Charity Name 2</h3>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Category: Education</p>
+                <div class="button-group">
+                    <button class="view-button">View</button>
+                    <button class="edit-button">Edit</button>
+                    <button class="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Share and Smile. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
